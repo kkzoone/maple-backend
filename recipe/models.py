@@ -18,7 +18,7 @@ class Category(MPTTModel):
         blank=True, null=True
     )
     title = models.CharField(max_length=100)
-    slug = models.SlugField(null=False, editable=False, allow_unicode=True)
+    slug = models.SlugField(unique=True, null=False, editable=False, allow_unicode=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
