@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'post',
     'rest_framework',
     'mptt',
-    'recipe'
+    'recipe',
 ]
 
 MIDDLEWARE = [
