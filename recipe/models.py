@@ -10,6 +10,9 @@ class Recipe(models.Model):
     body = models.JSONField(default=dict)
     category = TreeForeignKey('Category', on_delete=models.CASCADE, null=True)
 
+    class Meta:
+        db_table = "recipes"
+
 #레시피 카테고리
 class Category(MPTTModel):
     parent = TreeForeignKey(
@@ -18,7 +21,7 @@ class Category(MPTTModel):
         blank=True, null=True
     )
     title = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True, null=False, editable=False, allow_unicode=True)
+    slug = models.SlugField(null=False, editable=False, allow_unicode=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

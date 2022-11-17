@@ -69,8 +69,12 @@ WSGI_APPLICATION = 'maple.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myrecipe',
+        'USER': 'root',
+        'PASSWORD': '1234', #mariadb설치 시 설정했던 password
+        'HOST': 'localhost',
+        'PORT': '' #설정 안할 시 기본 값이 3306
     }
 }
 
